@@ -9,8 +9,6 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import java.util.Locale;
-
 public class DetailActivity extends ActionBarActivity {
 
     /**
@@ -89,29 +87,22 @@ public class DetailActivity extends ActionBarActivity {
         @Override
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+
+            return EditFragment.newInstance(position);
+        }
+
+        @Override
+        public int getItemPosition(Object object) {
+            return super.getItemPosition(object);
         }
 
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return RemindersDepot.getInstance(DetailActivity.this).getReminders().size();
         }
 
-        @Override
-        public CharSequence getPageTitle(int position) {
-            Locale l = Locale.getDefault();
-            switch (position) {
-                case 0:
-                    return getString(R.string.title_section1).toUpperCase(l);
-                case 1:
-                    return getString(R.string.title_section2).toUpperCase(l);
-                case 2:
-                    return getString(R.string.title_section3).toUpperCase(l);
-            }
-            return null;
-        }
+
     }
 
     /**
