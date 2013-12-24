@@ -38,6 +38,16 @@ public class MainFragment extends ListFragment {
     }
 
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        getActivity().runOnUiThread(new Runnable() {
+            public void run() {
+                mAdapter.notifyDataSetChanged();
+            }
+        });
+    }
+
     //setting the list adapter in onCreate() is too early. We need to wait until onActivityCreated
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
