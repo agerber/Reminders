@@ -14,7 +14,7 @@ public class MainFragment extends ListFragment {
 
 
 
-    private OnFragmentInteractionListener mListener;
+    private OnMainFragmentInteractionListener mListener;
 
 
 
@@ -43,10 +43,10 @@ public class MainFragment extends ListFragment {
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         try {
-            mListener = (OnFragmentInteractionListener) activity;
+            mListener = (OnMainFragmentInteractionListener) activity;
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString()
-                + " must implement OnFragmentInteractionListener");
+                + " must implement OnMainFragmentInteractionListener");
         }
     }
 
@@ -64,7 +64,7 @@ public class MainFragment extends ListFragment {
         if (null != mListener) {
             // Notify the active callbacks interface (the activity, if the
             // fragment is attached to one) that an item has been selected.
-            mListener.onFragmentInteraction(DummyContent.ITEMS.get(position).id);
+            mListener.onMainFragmentInteraction(DummyContent.ITEMS.get(position).id);
         }
     }
 
@@ -78,9 +78,9 @@ public class MainFragment extends ListFragment {
     * "http://developer.android.com/training/basics/fragments/communicating.html"
     * >Communicating with Other Fragments</a> for more information.
     */
-    public interface OnFragmentInteractionListener {
+    public interface OnMainFragmentInteractionListener {
         // TODO: Update argument type and name
-        public void onFragmentInteraction(String id);
+        public void onMainFragmentInteraction(String id);
     }
 
 }
