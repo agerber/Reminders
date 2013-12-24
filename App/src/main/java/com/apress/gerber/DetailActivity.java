@@ -43,6 +43,11 @@ public class DetailActivity extends ActionBarActivity {
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
+        Bundle bundle = getIntent().getExtras();
+        if(bundle != null){
+            mViewPager.setCurrentItem(bundle.getInt(MainActivity.REMINDER_ID));
+        }
+
     }
 
 

@@ -1,5 +1,6 @@
 package com.apress.gerber;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -7,6 +8,7 @@ import android.view.MenuItem;
 
 public class MainActivity extends ActionBarActivity implements MainFragment.OnMainFragmentInteractionListener {
 
+    public static final String REMINDER_ID = "reminder_id";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +53,12 @@ public class MainActivity extends ActionBarActivity implements MainFragment.OnMa
     @Override
     public void onMainFragmentInteraction(int position) {
 
-      //  Toast.makeText(this, "You clicked item " + position + 1, Toast.LENGTH_SHORT).show();
+         //fire-up DetailActivity and pass id to the bundle
+        Bundle bundle = new Bundle();
+        bundle.putInt(REMINDER_ID, position);
+        Intent intent = new Intent(this, DetailActivity.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
 
     }
 
