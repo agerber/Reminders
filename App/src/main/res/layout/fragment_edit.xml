@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.apress.gerber.EditFragment">
+
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="20"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+        <EditText
+                android:id="@+id/edit_title"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="80"
+                android:background="#2060"
+                android:gravity="start"
+                />
+
+        <RelativeLayout
+                android:id="@+id/rel_layout_images"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="20"
+                android:background="#2060"
+                android:orientation="horizontal"
+                >
+            <ImageView
+
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:src="@android:drawable/ic_media_ff"
+                    android:layout_alignParentLeft="true"
+                    />
+
+            <ImageView
+
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:src="@android:drawable/ic_media_rew"
+                    android:layout_alignParentRight="true"
+                     />
+
+                </RelativeLayout>
+    </LinearLayout>
+
+
+    <Button
+            android:id="@+id/button_save"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:text="SAVE"
+            android:textColor="#FFF"
+            android:textSize="24sp"
+            android:background="#040"/>
+
+
+</LinearLayout>
