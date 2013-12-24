@@ -25,19 +25,15 @@ public class MainFragment extends ListFragment {
     public MainFragment() {
     }
 
+
+    //setting the list adapter in onCreate() is too early. We need to wait until onActivityCreated
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
 
-        if (getArguments() != null) {
-
-        }
-
-        // TODO: Change Adapter to display your content
         setListAdapter(new ArrayAdapter<DummyContent.DummyItem>(getActivity(),
                 android.R.layout.simple_list_item_1, android.R.id.text1, DummyContent.ITEMS));
     }
-
 
     @Override
     public void onAttach(Activity activity) {
