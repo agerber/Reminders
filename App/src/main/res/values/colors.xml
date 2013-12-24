@@ -4,5 +4,6 @@
     <color name="dark_grey">#181818</color>
     <color name="dark_green">#003300</color>
     <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
 
 </resources>
