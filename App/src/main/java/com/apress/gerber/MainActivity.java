@@ -11,8 +11,10 @@ public class MainActivity extends ActionBarActivity implements MainFragment.OnMa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
+        RemindersDepot.getInstance(this).readInAtStart();
+
+        setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, new MainFragment())
@@ -47,5 +49,11 @@ public class MainActivity extends ActionBarActivity implements MainFragment.OnMa
 
         Toast.makeText(this, "You clicked item " + position + 1, Toast.LENGTH_SHORT).show();
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        RemindersDepot.getInstance(this).writeOutAtFinish();
+        super.onDestroy();
     }
 }
