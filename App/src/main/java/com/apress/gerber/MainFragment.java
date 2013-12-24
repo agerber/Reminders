@@ -32,7 +32,10 @@ public class MainFragment extends ListFragment {
         super.onActivityCreated(savedInstanceState);
 
         setListAdapter(new ArrayAdapter<DummyContent.DummyItem>(getActivity(),
-                android.R.layout.simple_list_item_1, android.R.id.text1, DummyContent.ITEMS));
+                R.layout.main_list_detail, R.id.list_text, DummyContent.ITEMS));
+
+        getListView().setDivider(null);
+        getListView().setDividerHeight(0);
     }
 
     @Override
