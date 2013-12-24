@@ -1,4 +1,4 @@
-package com.apress.gerber;
+package com.apress.gerber.activities;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,7 +9,11 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class DetailActivity extends ActionBarActivity implements EditFragment.OnEditFragmentInteractionListener{
+import com.apress.gerber.EditFragment;
+import com.apress.gerber.R;
+import com.apress.gerber.RemindersDepot;
+
+public class DetailActivity extends ActionBarActivity implements EditFragment.OnEditFragmentInteractionListener {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide

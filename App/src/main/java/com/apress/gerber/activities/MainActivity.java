@@ -1,10 +1,14 @@
-package com.apress.gerber;
+package com.apress.gerber.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.apress.gerber.MainFragment;
+import com.apress.gerber.R;
+import com.apress.gerber.RemindersDepot;
 
 public class MainActivity extends ActionBarActivity implements MainFragment.OnMainFragmentInteractionListener {
 

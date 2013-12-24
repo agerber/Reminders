@@ -11,6 +11,9 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.apress.gerber.activities.MainActivity;
+import com.apress.gerber.activities.NewReminderActivity;
+
 
 /**
  * A simple {@link android.support.v4.app.Fragment} subclass.

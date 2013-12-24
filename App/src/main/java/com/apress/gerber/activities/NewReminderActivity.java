@@ -1,9 +1,12 @@
-package com.apress.gerber;
+package com.apress.gerber.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 
-public class NewReminderActivity extends ActionBarActivity implements EditFragment.OnEditFragmentInteractionListener{
+import com.apress.gerber.EditFragment;
+import com.apress.gerber.R;
+
+public class NewReminderActivity extends ActionBarActivity implements EditFragment.OnEditFragmentInteractionListener {
 
     public static final int NEW_REMINDER = -1;
 
