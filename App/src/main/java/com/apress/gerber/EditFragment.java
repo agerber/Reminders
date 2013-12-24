@@ -63,9 +63,18 @@ public class EditFragment extends Fragment {
         mSaveButton = (Button) rootView.findViewById(R.id.button_save);
         mImagesRelativeLayout = (RelativeLayout) rootView.findViewById(R.id.rel_layout_images);
 
-        mExistingReminder = RemindersDepot.getInstance(getActivity()).getReminder(mPosition);
-        mTitleEditText.setText(mExistingReminder.getTitle());
-        mSaveButton.setText("Save");
+        if (mPosition == NewReminderActivity.NEW_REMINDER){
+            mExistingReminder = null;
+            mSaveButton.setText("New");
+            mImagesRelativeLayout.setVisibility(View.GONE);
+
+        } else {
+
+            mExistingReminder = RemindersDepot.getInstance(getActivity()).getReminder(mPosition);
+            mTitleEditText.setText(mExistingReminder.getTitle());
+            mSaveButton.setText("Save");
+
+        }
 
 
         mSaveButton.setOnClickListener(new View.OnClickListener() {
@@ -80,8 +89,14 @@ public class EditFragment extends Fragment {
                 }
 
 
-                 //we already have a reference to the current reminder, so let's just mutate it
-                 mExistingReminder.setTitle(mTitleEditText.getText().toString());
+                //if this is a new reminder
+                if (mPosition == NewReminderActivity.NEW_REMINDER){
+                    RemindersDepot.getInstance(getActivity()).addReminder(reminderNew);
+
+                } else {
+                    //we already have a reference to the current reminder, so let's just mutate it
+                    mExistingReminder.setTitle(mTitleEditText.getText().toString());
+                }
 
 
                 //this will call onEditFragmentInteraction() inside the hosting activity (either DetailActivity or NewReminderActivity)
