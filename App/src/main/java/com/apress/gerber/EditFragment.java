@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 /**
  * A simple {@link android.support.v4.app.Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link EditFragment.OnFragmentInteractionListener} interface
+ * {@link com.apress.gerber.EditFragment.OnEditFragmentInteractionListener} interface
  * to handle interaction events.
  * Use the {@link EditFragment#newInstance} factory method to
  * create an instance of this fragment.
@@ -21,7 +21,7 @@ import android.view.ViewGroup;
 public class EditFragment extends Fragment {
 
 
-    private OnFragmentInteractionListener mListener;
+    private OnEditFragmentInteractionListener mListener;
 
     /**
      * Use this factory method to create a new instance of
@@ -61,7 +61,7 @@ public class EditFragment extends Fragment {
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+            mListener.onEditFragmentInteraction(uri);
         }
     }
 
@@ -69,10 +69,10 @@ public class EditFragment extends Fragment {
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         try {
-            mListener = (OnFragmentInteractionListener) activity;
+            mListener = (OnEditFragmentInteractionListener) activity;
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString()
-                    + " must implement OnFragmentInteractionListener");
+                    + " must implement OnEditFragmentInteractionListener");
         }
     }
 
@@ -92,9 +92,9 @@ public class EditFragment extends Fragment {
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
-    public interface OnFragmentInteractionListener {
+    public interface OnEditFragmentInteractionListener {
         // TODO: Update argument type and name
-        public void onFragmentInteraction(Uri uri);
+        public void onEditFragmentInteraction(Uri uri);
     }
 
 }
