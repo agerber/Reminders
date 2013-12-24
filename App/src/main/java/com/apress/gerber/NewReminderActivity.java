@@ -3,7 +3,7 @@ package com.apress.gerber;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 
-public class NewReminderActivity extends ActionBarActivity {
+public class NewReminderActivity extends ActionBarActivity implements EditFragment.OnEditFragmentInteractionListener{
 
     public static final int NEW_REMINDER = -1;
 
@@ -20,7 +20,10 @@ public class NewReminderActivity extends ActionBarActivity {
     }
 
 
-
+    @Override
+    public void onEditFragmentInteraction() {
+        finish();
+    }
 
 
 }
