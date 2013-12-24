@@ -1,17 +1,13 @@
 package com.apress.gerber;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
 
 public class NewReminderActivity extends ActionBarActivity {
+
+    public static final int NEW_REMINDER = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +16,7 @@ public class NewReminderActivity extends ActionBarActivity {
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
+                    .add(R.id.container, EditFragment.newInstance(NEW_REMINDER))
                     .commit();
         }
     }
@@ -46,20 +42,6 @@ public class NewReminderActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
 
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_new_reminder, container, false);
-            return rootView;
-        }
-    }
 
 }
