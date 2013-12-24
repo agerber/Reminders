@@ -60,7 +60,7 @@ public class MainFragment extends ListFragment {
         if (null != mListener) {
             // Notify the active callbacks interface (the activity, if the
             // fragment is attached to one) that an item has been selected.
-            mListener.onMainFragmentInteraction(DummyContent.ITEMS.get(position).id);
+            mListener.onMainFragmentInteraction(position);
         }
     }
 
@@ -76,7 +76,7 @@ public class MainFragment extends ListFragment {
     */
     public interface OnMainFragmentInteractionListener {
         // TODO: Update argument type and name
-        public void onMainFragmentInteraction(String id);
+        public void onMainFragmentInteraction(int position);
     }
 
 }
