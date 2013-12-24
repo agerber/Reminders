@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity implements MainFragment.OnMainFragmentInteractionListener {
 
@@ -27,7 +26,7 @@ public class MainActivity extends ActionBarActivity implements MainFragment.OnMa
     public boolean onCreateOptionsMenu(Menu menu) {
         
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
 
@@ -37,8 +36,13 @@ public class MainActivity extends ActionBarActivity implements MainFragment.OnMa
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        switch(id){
+            case R.id.action_exit:
+                finish();
+                return true;
+            case R.id.action_add:
+                //call NewReminderActivity
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -47,7 +51,7 @@ public class MainActivity extends ActionBarActivity implements MainFragment.OnMa
     @Override
     public void onMainFragmentInteraction(int position) {
 
-        Toast.makeText(this, "You clicked item " + position + 1, Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(this, "You clicked item " + position + 1, Toast.LENGTH_SHORT).show();
 
     }
 
