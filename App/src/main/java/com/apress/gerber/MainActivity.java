@@ -44,6 +44,8 @@ public class MainActivity extends ActionBarActivity implements MainFragment.OnMa
                 return true;
             case R.id.action_add:
                 //call NewReminderActivity
+                Intent intent = new Intent(this, NewReminderActivity.class);
+                startActivity(intent);
                 return true;
         }
         return super.onOptionsItemSelected(item);
