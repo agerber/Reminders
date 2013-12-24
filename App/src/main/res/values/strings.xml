@@ -5,4 +5,35 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+    <string-array name="array_reminders">
+        <item>Lorem Ipsum</item>
+        <item>Sed ut perspiciatis</item>
+        <item>Unde omnis</item>
+        <item>Iste natus error sit voluptatem, magni dolores eos qui</item>
+        <item>Accusantium doloremque</item>
+        <item>Laudantium, totam rem</item>
+        <item>Aperiam, eaque ipsa quae </item>
+        <item>Ab illo inventore veritatis </item>
+        <item>Et quasi </item>
+        <item>Architecto beatae </item>
+        <item>Vitae dicta sunt explicabo</item>
+        <item>Nemo enim ipsam voluptatem </item>
+        <item>Quia voluptas sit </item>
+        <item>Aspernatur aut odit aut </item>
+        <item>Fugit, sed quia consequuntur </item>
+        <item>Magni dolores eos qui </item>
+        <item>Ratione voluptatem</item>
+        <item>Sequi nesciunt</item>
+        <item>Neque porro quisquam </item>
+        <item>Est, qui dolorem ipsum quia</item>
+        <item>Dolor sit</item>
+        <item>Amet, consectetur</item>
+        <item>Adipisci velic </item>
+        <item>Sed quia non numquam eius modi </item>
+        <item>Tempora incidunt </item>
+        <item>Ut labore </item>
+        <item>Et dolore magnam aliquam</item>
+
+    </string-array>
+
 </resources>
