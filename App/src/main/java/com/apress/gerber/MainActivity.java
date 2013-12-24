@@ -4,8 +4,9 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements MainFragment.OnMainFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,5 +42,10 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
+    @Override
+    public void onMainFragmentInteraction(int position) {
 
+        Toast.makeText(this, "You clicked item " + position + 1, Toast.LENGTH_SHORT).show();
+
+    }
 }
