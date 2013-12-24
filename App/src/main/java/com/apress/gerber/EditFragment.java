@@ -1,7 +1,6 @@
 package com.apress.gerber;
 
 import android.app.Activity;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -22,20 +21,13 @@ public class EditFragment extends Fragment {
 
 
     private OnEditFragmentInteractionListener mListener;
+    private int mPosition;
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment EditFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static EditFragment newInstance(String param1, String param2) {
+
+    public static EditFragment newInstance(int position) {
         EditFragment fragment = new EditFragment();
         Bundle args = new Bundle();
-
+        args.putInt(MainActivity.REMINDER_ID, position);
         fragment.setArguments(args);
         return fragment;
     }
@@ -47,7 +39,7 @@ public class EditFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-
+            mPosition = getArguments().getInt(MainActivity.REMINDER_ID);
         }
     }
 
@@ -58,16 +50,13 @@ public class EditFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_edit, container, false);
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onEditFragmentInteraction(uri);
-        }
-    }
+
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
+        //this casts the hosting activity to an interface which it implements (OnEditFragmentInteractionListener)
+        //this allows us to call mListener.onEditFragmentInteraction() later
         try {
             mListener = (OnEditFragmentInteractionListener) activity;
         } catch (ClassCastException e) {
@@ -79,6 +68,7 @@ public class EditFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
+        //release the reference to the activity onDetach. This is not required, but good practice anyway
         mListener = null;
     }
 
@@ -94,7 +84,7 @@ public class EditFragment extends Fragment {
      */
     public interface OnEditFragmentInteractionListener {
         // TODO: Update argument type and name
-        public void onEditFragmentInteraction(Uri uri);
+        public void onEditFragmentInteraction();
     }
 
 }
