@@ -10,6 +10,7 @@ import com.apress.gerber.MainFragment;
 import com.apress.gerber.R;
 import com.apress.gerber.RemindersDepot;
 
+//some change
 public class MainActivity extends ActionBarActivity implements MainFragment.OnMainFragmentInteractionListener {
 
     public static final String REMINDER_ID = "reminder_id";
@@ -36,6 +37,7 @@ public class MainActivity extends ActionBarActivity implements MainFragment.OnMa
         return true;
     }
 
+    //soemthing
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
